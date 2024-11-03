@@ -1,151 +1,269 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="style.scss">
-</head>
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<div class="resume-wrapper">
-	<section class="profile section-padding">
-		<div class="container">
-			<div class="picture-resume-wrapper">
-        <div class="picture-resume">
-        <span><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="" /></span>
-        <svg version="1.1" viewBox="0 0 350 350">
-  
-  <defs>
-    <filter id="goo">
-      <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
-      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -9" result="cm" />
-    </filter>
-  </defs>
-  
-  
-<g filter="url(#goo)" >  
-  
-  <circle id="main_circle" class="st0" cx="171.5" cy="175.6" r="130"/>
-  
-  <circle id="circle" class="bubble0 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble1 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble2 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble3 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble4 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble5 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble6 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble7 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble8 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble9 st1" cx="171.5" cy="175.6" r="122.7"/>
-  <circle id="circle" class="bubble10 st1" cx="171.5" cy="175.6" r="122.7"/>
+<html lang="en">
 
-</g>  
-</svg>
-      </div>
-         <div class="clearfix"></div>
- </div>
-      <div class="name-wrapper">
-        <h1>John <br/>Anderson</h1><!-- YOUR NAME AND LAST NAME  -->
-      </div>
-      <div class="clearfix"></div>
-      <div class="contact-info clearfix">
-      	<ul class="list-titles">
-      		<li>Call</li>
-      		<li>Mail</li>
-      		<li>Web</li>
-      		<li>Home</li>
-      	</ul>
-        <ul class="list-content ">
-        	<li>+34 123 456 789</li> <!-- YOUR PHONE NUMBER  -->
-        	<li>j.anderson@gmail.com</li> <!-- YOUR EMAIL -->
-        	<li><a href="#">janderson.com</a></li> <!-- YOUR WEBSITE  -->
-        	<li>Los Angeles, CA</li> <!-- YOUR STATE AND COUNTRY  -->
-        </ul>
-      </div>
-      <div class="contact-presentation"> <!-- YOUR PRESENTATION RESUME  -->
-      	<p><span class="bold">Lorem</span> ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod congue nisi, nec consequat quam. In consectetur faucibus turpis eget laoreet. Sed nec imperdiet purus. </p>
-      </div>
-      <div class="contact-social clearfix">
-      	<ul class="list-titles">
-      		<li>Twitter</li>
-      		<li>Dribbble</li>
-      		<li>Codepen</li>
-      	</ul>
-        <ul class="list-content"> <!-- REMEMBER TO PUT THE URL ON THE HREF TAG  -->
-      		<li><a href="">@janderson</a></li> <!-- YOUR TWITTER USER  -->
-      		<li><a href="">janderson</a></li> <!-- YOUR DRIBBBLE USER  -->
-      		<li><a href="">janderson</a></li> <!-- YOUR BEHANCE USER  -->
-      	</ul>
-      </div>
-		</div>
-	</section>
-  
-  <section class="experience section-padding">
-  	<div class="container">
-  		<h3 class="experience-title">Experience</h3>
-      
-      <div class="experience-wrapper">
-      	<div class="company-wrapper clearfix">
-      		<div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-          <div class="time">Nov 2012 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
-      	</div>
-        
-        <div class="job-wrapper clearfix">
-        	<div class="experience-title">Front End Developer </div> <!-- JOB TITLE  -->
-          <div class="company-description">
-          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Name - CV</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Include jsPDF from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+
+        h1, h2, h3 {
+            margin: 10px 0;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #252525;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        header h1 {
+            font-size: 48px;
+        }
+
+        header h2 {
+            font-weight: 300;
+            margin: 10px 0;
+            font-size: 26px;
+            color: #00b8d4;
+        }
+
+        #profile-pic {
+            width: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Main CV Section */
+        .cv-section {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: -30px;
+            border-radius: 8px;
+            padding: 40px;
+        }
+
+        .cv-section h2 {
+            border-bottom: 2px solid #00b8d4;
+            padding-bottom: 10px;
+        }
+
+        .cv-section .content {
+            margin-top: 20px;
+        }
+
+        /* Grid System */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-50 {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .col-100 {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            background-color: #252525;
+            color: white;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #00b8d4;
+        }
+
+        /* Download Button */
+        .download-btn {
+            background-color: #00b8d4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background-color: #007b99;
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            .col-50 {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile Picture">
+        <h1>Your Name</h1>
+        <h2>Job Title or Career Field</h2>
+    </header>
+
+    <!-- Main CV Content -->
+    <div class="container">
+        <div class="cv-section" id="cv-content">
+            <!-- About Section -->
+            <section>
+                <h2>About Me</h2>
+                <div class="content">
+                    <p>Hello! I'm a [Your Profession], with years of experience in [Your Area of Expertise]. I'm passionate about [Skills/Interests], and I have a successful track record of [Achievements]. Feel free to dive into my experience below, and get in touch if you're interested in collaborating.</p>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section>
+                <h2>Experience</h2>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-100">
+                            <h3>Job Title at Company Name</h3>
+                            <p><em>Jan 2020 - Present</em></p>
+                            <ul>
+                                <li>Key Responsibility 1 or Project Accomplishment</li>
+                                <li>Key Responsibility 2 or Project Accomplishment</li>
+                                <li>Key Responsibility 3 or Unique Contribution</li>
+                            </ul>
+                        </div>
+                        <div class="col-100">
+                            <h3>Job Title at Company Name</h3>
+                            <p><em>Mar 2018 - Dec 2019</em></p>
+                            <ul>
+                                <li>Key Responsibility or Project Achievement</li>
+                                <li>Key Responsibility or Project Achievement</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section>
+                <h2>Education</h2>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>University Name</h3>
+                            <p><em>Bachelor's Degree in Field of Study</em></p>
+                            <p>Year Graduated: 20XX</p>
+                        </div>
+                        <div class="col-50">
+                            <h3>Certification Name (Optional)</h3>
+                            <p><em>Authority or Institution</em></p>
+                            <p>Year Earned: 20XX</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section>
+                <h2>Professional Skills</h2>
+                <div class="content">
+                    <ul>
+                        <li>Skill 1: Brief Description</li>
+                        <li>Skill 2: Brief Description</li>
+                        <li>Skill 3: Brief Description</li>
+                        <li>Skill 4: Brief Description</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Contact Information Section -->
+            <section>
+                <h2>Contact Information</h2>
+                <div class="content">
+                    <p>Email: <a href="mailto:email@example.com">email@example.com</a></p>
+                    <p>Phone: (123) 456-7890</p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/your-profile/">linkedin.com/in/your-profile</a></p>
+                </div>
+            </section>
         </div>
-        
-        <div class="company-wrapper clearfix">
-      		<div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-          <div class="time">Nov 2010 - Present</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
-      	</div>
-        
-         <div class="job-wrapper clearfix">
-        	<div class="experience-title">Freelance, Web Designer / Web Developer</div> <!-- JOB TITLE  -->
-          <div class="company-description">
-          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>  <!-- JOB DESCRIPTION  -->
-          </div>
-        </div>
-        
-        <div class="company-wrapper clearfix">
-      		<div class="experience-title">Company name</div> <!-- NAME OF THE COMPANY YOUWORK WITH  -->
-          <div class="time">Nov 2009 - Nov 2010</div> <!-- THE TIME YOU WORK WITH THE COMPANY  -->
-      	</div> 
-        
-         <div class="job-wrapper clearfix">
-        	<div class="experience-title">Web Designer </div> <!-- JOB TITLE  -->
-          <div class="company-description">
-          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>   <!-- JOB DESCRIPTION  -->
-          </div>
-        </div>
-        
-      </div><!--Skill experience-->
-      
-      <div class="section-wrapper clearfix">
-      	<h3 class="section-title">Skills</h3>  <!-- YOUR SET OF SKILLS  -->
-        	<ul>
-        		<li class="skill-percentage">HTML / HTML5</li>
-        		<li class="skill-percentage">CSS / CSS3 / SASS / LESS</li>
-        		<li class="skill-percentage">Javascript</li>
-        		<li class="skill-percentage">Jquery</li>
-        		<li class="skill-percentage">Wordpress</li>
-        		<li class="skill-percentage">Photoshop</li>
-            
-        	</ul>
-        
-      </div>
-      
-      <div class="section-wrapper clearfix">
-        <h3 class="section-title">Hobbies</h3>  <!-- DESCRIPTION OF YOUR HOBBIES -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a elit facilisis, adipiscing leo in, dignissim magna.</p> 
-      </div>
-      
-  	</div>
-  </section>
-  
-  <div class="clearfix"></div>
-</div>
+
+        <!-- Download PDF Button -->
+        <button class="download-btn" onclick="downloadPDF()">Download as PDF</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Your Name. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+
+    <!-- JavaScript Function for PDF Generation -->
+    <script>
+        function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            // Define the content to be retrieved (CV content)
+            var content = document.getElementById("cv-content").innerHTML;
+
+            // Use jsPDF method to include HTML content and generate PDF
+            doc.html(content, {
+                callback: function (doc) {
+                    doc.save('Resume.pdf');
+                },
+                x: 10,
+                y: 10
+            });
+        }
+    </script>
+
 </body>
+
 </html>
