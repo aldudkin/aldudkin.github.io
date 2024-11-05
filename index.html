@@ -167,7 +167,7 @@
                 </div>
             </section>
             
-            <!-- Charitable activities -->
+            <!-- Side jobs -->
             <section>
                 <h2>Personal projects and side jobs</h2>
                 <div class="content">
@@ -180,6 +180,7 @@
                                 <li>Assisted in the deployment and troubleshooting of Ruckus Wi-Fi network, expanding coverage from 30 access points to approximately 60, including the integration of Wi-Fi 6 technology, all managed through a ZoneDirector controller.</li>
                                 <li>Gained experience working with Juniper switches to enhance network performance and reliability.</li>
                                 <li>Administered a Proxmox virtualization environment for dormitory services, ensuring optimal resource allocation and system performance.</li>
+                                <li>Implemented Samba for file sharing and resource access across the network, ensuring secure and efficient communication.</li>
                                 <li>Engaged in collaborative learning and softare development projects, fostering teamwork and communication abilities.</li>
                             </ul>
                         </div>
@@ -242,29 +243,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2023 Your Name. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 Aleksandr Dudkin. All Rights Reserved. </p>
     </footer>
-
-
-    <!-- JavaScript Function for PDF Generation -->
-    <script>
-        function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-
-            // Define the content to be retrieved (CV content)
-            var content = document.getElementById("cv-content").innerHTML;
-
-            // Use jsPDF method to include HTML content and generate PDF
-            doc.html(content, {
-                callback: function (doc) {
-                    doc.save('Resume.pdf');
-                },
-                x: 10,
-                y: 10
-            });
-        }
-    </script>
 
 </body>
 
