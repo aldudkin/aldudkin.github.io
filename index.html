@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>dudkin.cz</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
     <style>
         /* Global Styles */
         body {
@@ -62,6 +60,26 @@
             width: 200px;
             border-radius: 90%;
             margin-bottom: 20px;
+        }
+
+        /* Language Switch */
+        #language-switch {
+            text-align: right;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+
+        #language-switch button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #language-switch button.active {
+            background-color: #00b8d4;
         }
 
         /* Main CV Section */
@@ -127,6 +145,12 @@
 
 <body>
 
+    <!-- Language Switch -->
+    <div id="language-switch">
+        <button id="lang-en" class="active">English</button>
+        <button id="lang-cz">Čeština</button>
+    </div>
+
     <!-- Header Section -->
     <header>
         <img id="profile-pic" src="https://raw.githubusercontent.com/aldudkin/aldudkin.github.io/refs/heads/main/face.jpg" alt="Profile Picture">
@@ -136,7 +160,9 @@
 
     <!-- Main CV Content -->
     <div class="container">
-        <div class="cv-section" id="cv-content">
+
+        <!-- English Version -->
+        <div class="cv-section" id="cv-en">
             <!-- About Section -->
             <section>
                 <h2>About Me</h2>
@@ -144,7 +170,7 @@
                     <ul>
                         <li>Residence permit allowing <strong>employment without restrictions</strong> (according to <a href="https://www.zakonyprolidi.cz/cs/2004-435" target="_blank">§ 98 435/2004 Sb., j)</a>)</li>
                         <li>Fluent in both Czech and English.</li>
-                        <li>Passionate about continuous learning and eager to embrace new challenges outside my comfort zone.</li>                    
+                        <li>Passionate about continuous learning and eager to embrace new challenges outside my comfort zone.</li>
                     </ul>
                 </div>
             </section>
@@ -155,14 +181,14 @@
                 <div class="content">
                     <div class="row">
                         <div class="col-100">
-                            <h3>System Admistrator</h3>
+                            <h3>System Administrator</h3>
                             <p><em>Eviden Czech Republic</em></p>
-                            <p><em>Jan 2024 - Present</em></p>
+                            <p><em>Jan 2024 - present</em></p>
                             <ul>
                                 <li>Utilized Cisco CLI to manage and configure network devices, ensuring reliable connectivity.</li>
                                 <li>Developed and implemented automated scripts to streamline printer setup across multiple branch offices, replacing the previous manual process.</li>
                                 <li>Oversaw the administration of WIN-PAK integrated security software and MyQ print management solution to enhance operational efficiency.</li>
-                                <li>Contributed to the administration of the Proxmox environment, supporting system stability and performance.</li>                                
+                                <li>Contributed to the administration of the Proxmox environment, supporting system stability and performance.</li>
                                 <li>Created comprehensive internal documentation and user guides to facilitate end-user training and support.</li>
                                 <li>Managed IT inventory, tracking hardware and software assets to maintain up-to-date records.</li>
                                 <li>Diagnosed and troubleshot hardware and software issues of end users, providing timely resolutions to minimize downtime.</li>
@@ -172,14 +198,13 @@
                     </div>
                 </div>
             </section>
-            
-            <!-- Side jobs -->
+
             <section>
                 <h2>Personal projects and side jobs</h2>
                 <div class="content">
                     <div class="row">
                         <div class="col-100">
-                            <h3>Dormitory network admistrator</h3>
+                            <h3>Dormitory network administrator</h3>
                             <p><em>CTU Student Union</em></p>
                             <p><em>July 2023 - Present</em></p>
                             <ul>
@@ -194,18 +219,16 @@
                 </div>
             </section>
 
-            <!-- Certs  Section -->
             <section>
                 <h2>Professional certification</h2>
                 <div class="content">
-                <h3>Cisco Certified Network Associate</h3>
-                <p><em>September 2024</em></p>
-                <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06e16411-b579-46e3-84eb-95d407bc1ad2" data-share-badge-host="https://www.credly.com"></div>
-                <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>                
+                    <h3>Cisco Certified Network Associate</h3>
+                    <p><em>September 2024</em></p>
+                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06e16411-b579-46e3-84eb-95d407bc1ad2" data-share-badge-host="https://www.credly.com"></div>
+                    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
                 </div>
             </section>
 
-            <!-- Education Section -->
             <section>
                 <h2>Education</h2>
                 <div class="content">
@@ -213,13 +236,14 @@
                         <div class="col-50">
                             <h3>Czech Technical University in Prague, Faculty of Information Technology</h3>
                             <p><em>September 2022 - July 2026</em></p>
-                                <ul>
-                                    <li>Gained a strong foundation in computer science principles, algorithms, and data structures.</li>
-                                    <li>Practiced advanced mathematical concepts relevant to computing and problem-solving.</li>
-                                    <li>Acquired hands-on experience with MikroTik networking appliances, enhancing skills in network configuration and management.</li>
-                                    <li>Developed programming skills by writing and debugging code in C++, focusing on object-oriented programming techniques.</li>                                    
-                                </ul>         
+                            <ul>
+                                <li>Gained a strong foundation in computer science principles, algorithms, and data structures.</li>
+                                <li>Practiced advanced mathematical concepts relevant to computing and problem-solving.</li>
+                                <li>Acquired hands-on experience with MikroTik networking appliances, enhancing skills in network configuration and management.</li>
+                                <li>Developed programming skills by writing and debugging code in C++, focusing on object-oriented programming techniques.</li>
+                            </ul>
                         </div>
+
                         <div class="col-50">
                             <h3>Charles University, Institute for Language and Preparatory Studies</h3>
                             <p><em>September 2021 - August 2022</em></p>
@@ -229,14 +253,12 @@
                                     Czech: 90% (excellent)<br>
                                     Mathematics: 91% (excellent)<br>
                                     Informatics: 95% (excellent)
-                            </ul>                            
-                        </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Contact Information Section -->
             <section>
                 <h2>Contact Information</h2>
                 <div class="content">
@@ -245,13 +267,141 @@
                 </div>
             </section>
         </div>
+
+        <!-- Czech Version -->
+        <div class="cv-section" id="cv-cz" style="display: none;">
+            <!-- O mně -->
+            <section>
+                <h2>O mně</h2>
+                <div class="content">
+                    <ul>
+                        <li>Povolení k pobytu umožňující <strong>zaměstnání bez omezení</strong> (dle <a href="https://www.zakonyprolidi.cz/cs/2004-435" target="_blank">§ 98 435/2004 Sb., j)</a>)</li>
+                        <li>Plynně ovládám češtinu i angličtinu.</li>
+                        <li>Mám vášeň pro neustálé učení a jsem ochoten přijmout nové výzvy mimo mou komfortní zónu.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Pracovní zkušenosti -->
+            <section>
+                <h2>Pracovní zkušenosti</h2>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-100">
+                            <h3>Systémový administrátor</h3>
+                            <p><em>Eviden Česká republika</em></p>
+                            <p><em>Leden 2024 - současnost</em></p>
+                            <ul>
+                                <li>Využití Cisco CLI pro správu a konfiguraci síťových zařízení, zajišťující spolehlivé připojení.</li>
+                                <li>Vyvinutí a implementace automatizovaných skriptů pro zjednodušení konfigurace tiskáren v různých pobočkách, nahrazující předchozí manuální proces.</li>
+                                <li>Správa WIN-PAK integrovaného bezpečnostního softwaru a MyQ řešení pro správu tisku, čímž se zvýšila provozní účinnost.</li>
+                                <li>Podpora správy prostředí Proxmox na udržení stability systému a jeho výkonu.</li>
+                                <li>Vytváření interní dokumentace a uživatelských příruček pro usnadnění školení a podpory koncových uživatelů.</li>
+                                <li>Správa IT inventáře, sledování hardwaru a softwarových prostředků k udržení aktuálních záznamů.</li>
+                                <li>Diagnostika a řešení hardwarových a softwarových problémů, poskytující včasná řešení pro minimalizaci výpadků.</li>
+                                <li>Komunikace s uživateli různé technické úrovně, vysvětlení složitých pojmů srozumitelně.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Osobní projekty a vedlejší práce</h2>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-100">
+                            <h3>Administrátor sítě na koleji</h3>
+                            <p><em>CTU Student Union</em></p>
+                            <p><em>Červenec 2023 - současnost</em></p>
+                            <ul>
+                                <li>Nasadil a spravoval distribuovanou síť Wi-Fi pomocí Ruckus, čítající zhruba 60 přístupových bodů, všechny spravované přes ZoneDirector kontrolér.</li>
+                                <li>Získal zkušenosti s Juniper přepínači pro zvýšení stability a výkonu sítě.</li>
+                                <li>Spravoval virtualizační prostředí Proxmox pro poskytování služeb kolejí, zajištění optimálního rozdělení zdrojů a výkonu systému.</li>
+                                <li>Implementoval Samba pro sdílení souborů a prostředků po síti.</li>
+                                <li>Spolupracoval na vývojových projektech a získal zkušenosti s týmovou prací a softwarovým inženýrstvím.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Profesní certifikace</h2>
+                <div class="content">
+                    <h3>Cisco Certified Network Associate</h3>
+                    <p><em>Září 2024</em></p>
+                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06e16411-b579-46e3-84eb-95d407bc1ad2" data-share-badge-host="https://www.credly.com"></div>
+                    <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+                </div>
+            </section>
+
+            <section>
+                <h2>Vzdělání</h2>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-50">
+                            <h3>České vysoké učení technické v Praze, Fakulta informačních technologií</h3>
+                            <p><em>Září 2022 - Červenec 2026</em></p>
+                            <ul>
+                                <li>Získal jsem pevné základy v počítačové vědě, algoritmech a datových strukturách.</li>
+                                <li>Praktikoval jsem pokročilé matematické koncepty relevantní k programování a řešení problémů.</li>
+                                <li>Získal jsem praktické zkušenosti s MikroTik zařízeními pro konfiguraci a správu sítí.</li>
+                                <li>Psání a ladění programů v C++, se zaměřením na objektově orientované programování.</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-50">
+                            <h3>Univerzita Karlova, Ústav jazykové a odborné přípravy</h3>
+                            <p><em>Září 2021 - Srpen 2022</em></p>
+                            <ul>
+                                <li>Úspěšně dokončen přípravný kurz vedoucí k přijetí na bakalářský program na ČVUT.</li>
+                                <li>Výsledky celoživotního vzdělávacího programu:</li>
+                                    Čeština: 90% (vynikající)<br>
+                                    Matematika: 91% (vynikající)<br>
+                                    Informatika: 95% (vynikající)
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Kontaktní údaje</h2>
+                <div class="content">
+                    <p>Email: <a href="mailto:aleks@dudkin.cz" target="_blank">aleks@dudkin.cz</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/aleksandr-dudkin-328b4a274" target="_blank">www.linkedin.com/in/aleksandr-dudkin-328b4a274</a></p>
+                </div>
+            </section>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Aleksandr Dudkin. All Rights Reserved. </p>
+        <p>&copy; 2024 Aleksandr Dudkin. Všechna práva vyhrazena.</p>
     </footer>
 
-</body>
+    <!-- Language Switch JavaScript -->
+    <script>
+        const btnEn = document.getElementById('lang-en');
+        const btnCz = document.getElementById('lang-cz');
+        const sectionEn = document.getElementById('cv-en');
+        const sectionCz = document.getElementById('cv-cz');
 
+        btnEn.addEventListener('click', () => {
+            btnEn.classList.add('active');
+            btnCz.classList.remove('active');
+            sectionEn.style.display = 'block';
+            sectionCz.style.display = 'none';
+        });
+
+        btnCz.addEventListener('click', () => {
+            btnCz.classList.add('active');
+            btnEn.classList.remove('active');
+            sectionEn.style.display = 'none';
+            sectionCz.style.display = 'block';
+        });
+    </script>
+
+</body>
 </html>
