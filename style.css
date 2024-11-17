@@ -54,20 +54,29 @@ header h2 {
   margin-bottom: 20px;
 }
 
-/* Language Switch */
 #language-switch {
-  text-align: right;
-  padding: 10px;
-  background-color: #252525;
+  position: fixed; /* Makes it fixed in the viewport */
+  bottom: 850px;   /* 20px from the bottom */
+  right: 20px;    /* 20px from the right */
+  /*background-color: white; /* Optional: Background color for visibility */
+  padding: 10px;  /* Padding around the buttons */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: Shadow for a nicer look */
+  z-index: 1000;  /* Ensures it stays above other content */
 }
 
 #language-switch button {
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
+  margin: 0 5px; /* Spacing between the buttons */
+  padding: 8px 12px; /* Padding inside the buttons */
+  font-size: 20px; /* Font size for the buttons */
+  border: 1px solid #007bff; /* Nice border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #007bff; /* Background color */
+  color: #ffffff; /* Text color */
+  cursor: pointer; /* Pointer on hover */
+}
+
+#language-switch button:hover {
+  background-color: #0056b3; /* Darker background on hover */
 }
 
 #language-switch button.active {
@@ -77,7 +86,7 @@ header h2 {
 /* Main CV Section */
 .cv-section {
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(8, 4, 229, 0.1);
   margin-top: -30px;
   border-radius: 8px;
   padding: 40px;
