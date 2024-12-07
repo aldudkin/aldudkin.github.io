@@ -68,9 +68,9 @@ header h2 {
   margin: 0 5px; /* Spacing between the buttons */
   padding: 8px 12px; /* Padding inside the buttons */
   font-size: 20px; /* Font size for the buttons */
-  border: 1px solid #007bff; /* Nice border */
+  border: 1px solid #004b9b; /* Nice border */
   border-radius: 4px; /* Rounded corners */
-  background-color: #007bff; /* Background color */
+  background-color: #004b9b; /* Background color */
   color: #ffffff; /* Text color */
   cursor: pointer; /* Pointer on hover */
 }
