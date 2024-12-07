@@ -138,7 +138,7 @@ footer a {
 .tech-skills ul {
   list-style: none;
   padding: 0;
-  columns: 2; /* Adjust the number of columns as needed */
+  columns: 3; /* Adjust the number of columns as needed */
 }
 
 .tech-skills li {
