@@ -145,6 +145,47 @@ footer a {
   margin-bottom: 8px;
 }
 
+/* Center the entire section content */
+.certification-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers items horizontally */
+  /* padding: 20px;       /* Optional: Adds padding around the section */
+}
+
+/* Style the content container */
+.certification-section .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers child elements horizontally */
+  text-align: center;  /* Centers text inside child elements */
+  max-width: 600px;    /* Optional: Sets a maximum width for better readability */
+}
+
+/* Optional: Add spacing between elements 
+.certification-section .content h3 {
+  margin-bottom: 10px;
+}*/
+
+.certification-section .content p {
+  margin-bottom: 5px;
+}
+
+/* Optional: Style the embed container */
+.certification-section .embed-container {
+  display: flex;
+  justify-content: center; /* Centers the embed horizontally */
+  align-items: center;     /* Centers the embed vertically if it has height */
+  width: 100%;             /* Ensures the embed container takes full width */
+}
+
+/* Responsive Adjustments (Optional) */
+@media (max-width: 600px) {
+  .certification-section .content {
+      padding: 0 10px;
+  }
+}
+
 /* Responsive Styling */
 @media screen and (max-width: 768px) {
   .col-50 {
